@@ -1,4 +1,4 @@
-cp mongo.repo /etc/yum.repo.d/mongo.repo
+cp /home/centos/ROBO-SHELL/mongo.repo /etc/yum.repo.d/mongo.repo
 yum install mongodb-org -y
 systemctl enable mongod 
 systemctl start mongod 
