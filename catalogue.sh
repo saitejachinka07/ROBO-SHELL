@@ -20,9 +20,10 @@ echo -e "\e[36m>>>>>> daemon-reload <<<<<<\e[0m"
 systemctl daemon-reload
 echo -e "\e[36m>>>>>> enabling the catalogue <<<<<<\e[0m"
 systemctl enable catalogue
-systemctl restart catalogue
 echo -e "\e[36m>>>>>> INSTALLING MANGODB <<<<<<\e[0m"
 cp mongo.repo /etc/yum.repo.d/mongo.repo
 yum install mongodb-org-shell-y
 echo -e "\e[36m>>>>>> LOADING SCHEMA <<<<<<\e[0m"
 mongo --host mongodb.tej07.online</app/schema/catalogue.js
+echo -e "\e[36m>>>>>> restart the catalogue <<<<<<\e[0m"
+systemctl restart catalogue
