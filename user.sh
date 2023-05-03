@@ -15,13 +15,13 @@ cd /app
 echo -e "\e[36m>>>>>> DOWNLOADING NODEJS DEPENDENCIES <<<<<<\e[0m"
 npm install 
 echo -e "\e[36m>>>>>> copying user service file <<<<<<\e[0m"
-cp /home/centos/ROBO-SHELL/user.service /etc/systemd/system/user.service
+cp /home/centos/~/ROBO-shellL/user.service /etc/systemd/system/user.service
 echo -e "\e[36m>>>>>> daemon-reload <<<<<<\e[0m"
 systemctl daemon-reload
 echo -e "\e[36m>>>>>> enabling the user <<<<<<\e[0m"
 systemctl enable user
 echo -e "\e[36m>>>>>> copying MANGODB.REPO <<<<<<\e[0m"
-cp /home/centos/ROBO-SHELL/mongo.repo /etc/yum.repos.d/mongo.repo
+cp /home/centos/ROBO-shell/mongo.repo /etc/yum.repos.d/mongo.repo
 echo -e "\e[36m>>>>>> INSTALLING MANGODB <<<<<<\e[0m"
 yum install mongodb-org-shell -y
 echo -e "\e[36m>>>>>> LOADING SCHEMA <<<<<<\e[0m"
