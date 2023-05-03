@@ -21,7 +21,7 @@ systemctl daemon-reload
 echo -e "\e[36m>>>>>> enabling the user <<<<<<\e[0m"
 systemctl enable user
 echo -e "\e[36m>>>>>> copying MANGODB.REPO <<<<<<\e[0m"
-cp /home/centos/ROBO-SHELl/mongo.repo /etc/yum.repo.d/mongo.repo
+cp /home/centos/ROBO-SHELL/mongo.repo /etc/yum.repo.d/mongo.repo
 echo -e "\e[36m>>>>>> INSTALLING MANGODB <<<<<<\e[0m"
 yum install mongodb-org-shell -y
 echo -e "\e[36m>>>>>> LOADING SCHEMA <<<<<<\e[0m"
