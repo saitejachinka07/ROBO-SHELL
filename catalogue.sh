@@ -21,7 +21,7 @@ systemctl daemon-reload
 echo -e "\e[36m>>>>>> enabling the catalogue <<<<<<\e[0m"
 systemctl enable catalogue
 echo -e "\e[36m>>>>>> INSTALLING MANGODB <<<<<<\e[0m"
-cp mongo.repo /etc/yum.repo.d/mongo.repo
+cp /home/centos/ROBO-SHELL/mongo.repo /etc/yum.repo.d/mongo.repo
 yum install mongodb-org-shell -y
 echo -e "\e[36m>>>>>> LOADING SCHEMA <<<<<<\e[0m"
 mongo --host mongodb.tej07.online/app/schema/catalogue.js
