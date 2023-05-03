@@ -15,7 +15,7 @@ cd /app
 echo -e "\e[36m>>>>>> DOWNLOADING NODEJS DEPENDENCIES <<<<<<\e[0m"
 npm install 
 echo -e "\e[36m>>>>>> COPYING catalogue service file <<<<<<\e[0m"
-cp /home/centos/ROBO-SHELL/catalogue.service /etc/systemd/systsem/catalogue.service
+cp /home/centos/ROBO-SHELL/catalogue.service /etc/systemd/system/catalogue.service
 echo -e "\e[36m>>>>>> daemon-reload <<<<<<\e[0m"
 systemctl daemon-reload
 echo -e "\e[36m>>>>>> enabling the catalogue <<<<<<\e[0m"
