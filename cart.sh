@@ -15,9 +15,10 @@ cd /app
 echo -e "\e[36m>>>>>> DOWNLOADING NODEJS DEPENDENCIES <<<<<<\e[0m"
 npm install 
 echo -e "\e[36m>>>>>> copying cart service file <<<<<<\e[0m"
-cp cart.service /etc/systemd/systsem/cart.service
+cp /home/centos/ROBO-SHELL/cart.service /etc/systemd/systsem/cart.service
 echo -e "\e[36m>>>>>> daemon-reload <<<<<<\e[0m"
 systemctl daemon-reload
 echo -e "\e[36m>>>>>> enabling the cart <<<<<<\e[0m"
 systemctl enable cart
+echo -e "\e[36m>>>>>> restart the cart <<<<<<\e[0m"
 systemctl restart cart

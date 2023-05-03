@@ -20,9 +20,11 @@ echo -e "\e[36m>>>>>> daemon-reload <<<<<<\e[0m"
 systemctl daemon-reload
 echo -e "\e[36m>>>>>> enabling the user <<<<<<\e[0m"
 systemctl enable user
-systemctl restart user
-echo -e "\e[36m>>>>>> INSTALLING MANGODB <<<<<<\e[0m"
+echo -e "\e[36m>>>>>> copying MANGODB.REPO <<<<<<\e[0m"
 cp mongo.repo /etc/yum.repo.d/mongo.repo
+echo -e "\e[36m>>>>>> INSTALLING MANGODB <<<<<<\e[0m"
 yum install mongodb-org-shell-y
 echo -e "\e[36m>>>>>> LOADING SCHEMA <<<<<<\e[0m"
 mongo --host mongodb.tej07.online</app/schema/user.js
+echo -e "\e[36m>>>>>> restart the user <<<<<<\e[0m"
+systemctl restart user
