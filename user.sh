@@ -15,7 +15,7 @@ cd /app
 echo -e "\e[36m>>>>>> DOWNLOADING NODEJS DEPENDENCIES <<<<<<\e[0m"
 npm install 
 echo -e "\e[36m>>>>>> copying user service file <<<<<<\e[0m"
-cp /home/centos/~/ROBO-shellL/user.service /etc/systemd/system/user.service
+cp /home/centos/ROBO-shell/user.service /etc/systemd/system/user.service
 echo -e "\e[36m>>>>>> daemon-reload <<<<<<\e[0m"
 systemctl daemon-reload
 echo -e "\e[36m>>>>>> enabling the user <<<<<<\e[0m"
