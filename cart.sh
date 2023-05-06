@@ -1,8 +1,9 @@
+source common.sh
 echo -e "\e[36m>>>>>>> Installing nodejs <<<<<<<<<\e[0m"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 yum install nodejs -y
 echo -e "\e[36m>>>>>> ADDING APPLICATION USER <<<<<<\e[0m"
-useradd roboshop
+useradd ${app_user}
 echo -e "\e[36m>>>>>> CREATING APPLICATION DIRECTORY <<<<<<\e[0m"
 mkdir /app
 echo -e "\e[36m>>>>>> DOWNLOADING APPLICATION CONTENT <<<<<<\e[0m"
