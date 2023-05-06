@@ -2,7 +2,6 @@ script_path=$(dirname $0)
 source ${script_path}/common.sh
 echo $script_path
 echo ${app_user}
-exit
 echo -e "\e[36m>>>>>>> Installing nodejs <<<<<<<<<\e[0m"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 yum install nodejs -y
@@ -20,7 +19,7 @@ cd /app
 echo -e "\e[36m>>>>>> DOWNLOADING NODEJS DEPENDENCIES <<<<<<\e[0m"
 npm install 
 echo -e "\e[36m>>>>>> copying cart service file <<<<<<\e[0m"
-cp /home/centos/ROBO-SHELL/cart.service /etc/systemd/system/cart.service
+cp ${script_path}/cart.service /etc/systemd/system/cart.service
 echo -e "\e[36m>>>>>> daemon-reload <<<<<<\e[0m"
 systemctl daemon-reload
 echo -e "\e[36m>>>>>> enabling the cart <<<<<<\e[0m"
