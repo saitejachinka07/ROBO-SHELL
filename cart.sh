@@ -1,6 +1,6 @@
 script_path=(dirnam $0)
 source common.sh
-echo pwd
+echo $(script_path)
 exit
 echo -e "\e[36m>>>>>>> Installing nodejs <<<<<<<<<\e[0m"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
