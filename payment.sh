@@ -15,10 +15,10 @@ unzip /tmp/payment.zip
 cd /app 
 echo -e "\e[36m>>>>>>>>>>>>>>>>>>>>   Installing python dependencies   <<<<<<<<<<<<<<<<<<\e[0m"
 pip3.6 install -r requirements.txt
-echo -e "\e[36m>>>>>>>>>>>>>>>>>>>>   sed roboshop password   <<<<<<<<<<<<<<<<<<\e[0m"
-sed -i -e  "s|rabbitmq_appuser_password|roboshop123|"  /etc/systemd/system/payment.service
 echo -e "\e[36m>>>>>>>>>>>>>>>>>>>>   copying payment.service file   <<<<<<<<<<<<<<<<<<\e[0m"
 cp /home/centos/ROBO-SHELL/payment.service /etc/systemd/system/payment.service
+sed -i -e  "s|rabbitmq_appuser_password|roboshop123|"  /etc/systemd/system/payment.service
+echo -e "\e[36m>>>>>>>>>>>>>>>>>>>>   copying payment.service file   <<<<<<<<<<<<<<<<<<\e[0m"
 #sed -i -e "s|rabbitmq_appuser_password|${rabbitmq_appuser_password}|"  $script_path}/payment.service
 echo -e "\e[36m>>>>>>>>>>>>>>>>>>>>   Reloading daemon   <<<<<<<<<<<<<<<<<<\e[0m"
 systemctl daemon-reload
