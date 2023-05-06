@@ -1,3 +1,4 @@
+source common.sh
 echo -e "\e[36m>>>>>>>>>>>  Downloading rabbitmq <<<<<<<<<<<<\e[0"
 curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash
 echo -e "\e[36m>>>>>>>>>>>  Downloading erlang <<<<<<<<<<<<\e[0"
