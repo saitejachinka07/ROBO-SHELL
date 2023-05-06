@@ -1,7 +1,9 @@
-script_path=$(dirname $0)
+script=$(realpath "$0")
+script_path=$(dirname "$script")
 source ${script_path}/common.sh
-#echo $script_path
-#echo ${app_user}
+echo $script_path
+echo ${app_user}
+exit
 echo -e "\e[36m>>>>>>> Installing nodejs <<<<<<<<<\e[0m"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 yum install nodejs -y
