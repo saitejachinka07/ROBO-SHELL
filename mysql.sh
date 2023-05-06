@@ -9,4 +9,4 @@ systemctl enable mysqld
 echo -e "\e[36m>>>>>>>> start mysql  <<<<<<<<<<<\e[0m"
 systemctl start mysqld  
 echo -e "\e[36m>>>>>>>>> Reset Mysql password <<<<<<<<<<\e[0m"
-mysql_secure_installation --set-root-pass RoboShop@
+mysql_secure_installation --set-root-pass RoboShop@1
