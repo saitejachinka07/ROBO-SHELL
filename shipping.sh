@@ -1,4 +1,5 @@
-source common.sh
+script_path=$(dirname $0)
+source ${script_path}/common.sh
 echo -e "\e[36m>>>>>>> Installing maven <<<<<<<<<\e[0m"
 yum install maven -y
 echo -e "\e[36m>>>>>>> Installing maven <<<<<<<<<\e[0m"
@@ -17,7 +18,7 @@ cd /app
 mvn clean package 
 mv target/shipping-1.0.jar shipping.jar 
 echo -e "\e[36m>>>>>> DOWNLOADING MAVEN DEPENDENCIES <<<<<<\e[0m"
-cp /home/centos/ROBO-SHELL/shipping.service /etc/systemd/system/shipping.service
+cp ${script_path}/shipping.service /etc/systemd/system/shipping.service
 echo -e "\e[36m>>>>>> RELOAD DAEMON <<<<<<\e[0m"
 systemctl daemon-reload
 echo -e "\e[36m>>>>>> INSTALL MYSQL <<<<<<\e[0m"
