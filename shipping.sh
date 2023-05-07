@@ -26,7 +26,7 @@ systemctl daemon-reload
 echo -e "\e[36m>>>>>> INSTALL MYSQL <<<<<<\e[0m"
 yum install mysql -y 
 echo -e "\e[36m>>>>>> LOAD SCHEMA <<<<<<\e[0m"
-mysql -h mysql.tej07.online -uroot -p${ mysql_root_password } < /app/schema/shipping.sql 
+mysql -h mysql.tej07.online -uroot -p${mysql_root_password} < /app/schema/shipping.sql 
 echo -e "\e[36m>>>>>> ENABLE SHIPPING <<<<<<\e[0m"
 systemctl enable shipping
 echo -e "\e[36m>>>>>> RESTART MYSQL <<<<<<\e[0m"
