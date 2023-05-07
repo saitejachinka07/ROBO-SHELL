@@ -1,7 +1,7 @@
 script=$(realpath "$0")
 script_path=$(dirname "$script")
 source ${script_path}/common.sh
-rabbit_passwd=$1
+rabbitmq_app_passwd=$1
 echo -e "\e[36m>>>>>>>>>>>>>>>>>>>>   Installing python   <<<<<<<<<<<<<<<<<<\e[0m"
 yum install python36 gcc python3-devel -y
 echo -e "\e[36m>>>>>>>>>>>>>>>>>>>>   creatig roboshop user   <<<<<<<<<<<<<<<<<<\e[0m"
