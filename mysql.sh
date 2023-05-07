@@ -1,7 +1,7 @@
 script=$(realpath "$0")
 script_path=$(dirname "$script")
 source ${script_path}/common.sh
-mysql_password=$1
+#mysql_password=$1
 echo -e "\e[36m>>>>>>>>  disable  mysql module  <<<<<<<<<<<\e[0m"
 dnf module disable mysql -y
 echo -e "\e[36m>>>>>>>>  copying mysql repo file  <<<<<<<<<<<\e[0m"
