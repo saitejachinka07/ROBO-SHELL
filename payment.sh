@@ -20,8 +20,8 @@ echo -e "\e[36m>>>>>>>>>>>>>>>>>>>>   Installing python dependencies   <<<<<<<<<
 pip3.6 install -r requirements.txt
 
 echo -e "\e[36m>>>>>>>>>>>>>>>>>>>>   soft coding the password  <<<<<<<<<<<<<<<<<<\e[0m"
-sed -i -e "s|rabbit_passwd|${rabbit_passwd}|"  ${script_path}/payment.service
-echo -e "\e[36m>>>>>>>>>>>>>>>>>>>>   copying payment.service file   <<<<<<<<<<<<<<<<<<\e[0m"
+#sed -i -e "s|rabbit_passwd|${rabbit_passwd}|"  ${script_path}/payment.service
+#echo -e "\e[36m>>>>>>>>>>>>>>>>>>>>   copying payment.service file   <<<<<<<<<<<<<<<<<<\e[0m"
 cp ${script_path}/payment.service /etc/systemd/system/payment.service
 #sed -i -e  "s|rabbitmq_appuser_password|roboshop123|"  /etc/systemd/system/payment.service
 #echo -e "\e[36m>>>>>>>>>>>>>>>>>>>>   copying payment.service file   <<<<<<<<<<<<<<<<<<\e[0m"
