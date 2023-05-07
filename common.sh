@@ -8,6 +8,16 @@ print_head() {
 
 }
 
+schema_setup() {
+echo -e "\e[36m>>>>>> copying MANGODB.REPO <<<<<<\e[0m"
+cp ${script_path}/mongo.repo /etc/yum.repos.d/mongo.repo
+echo -e "\e[36m>>>>>> INSTALLING MANGODB <<<<<<\e[0m"
+yum install mongodb-org-shell -y
+echo -e "\e[36m>>>>>> LOADING SCHEMA <<<<<<\e[0m"
+mongo --host mongodb.tej07.online/app/schema/${component}.js
+
+}
+
 
 
 func_nodejs() {
@@ -35,4 +45,6 @@ print_head enabling the cart
 systemctl enable ${component}
 print_head restart the cart 
 systemctl restart ${component}
+
+schema_setup
 }
