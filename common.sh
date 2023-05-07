@@ -2,29 +2,37 @@ app_user=roboshop
 script=$(realpath "$0")
 script_path=$(dirname "$script")
 
+print_head() {
+
+        echo -e "\e[36m>>>>>>> $* <<<<<<<<<\e[0m"
+
+}
+
+
+
 func_nodejs() {
-    echo -e "\e[36m>>>>>>> Installing nodejs <<<<<<<<<\e[0m"
+     Installing nodejs 
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 yum install nodejs -y
-echo -e "\e[36m>>>>>> ADDING APPLICATION USER <<<<<<\e[0m"
+ ADDING APPLICATION USER 
 useradd ${app_user}
-echo -e "\e[36m>>>>>> CREATING APPLICATION DIRECTORY <<<<<<\e[0m"
+ CREATING APPLICATION DIRECTORY 
 mkdir /app
-echo -e "\e[36m>>>>>> DOWNLOADING APPLICATION CONTENT <<<<<<\e[0m"
+ DOWNLOADING APPLICATION CONTENT 
 curl -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip 
-echo -e "\e[36m>>>>>> REDIRECTING TO /APP DIRECTORY <<<<<<\e[0m"
+ REDIRECTING TO /APP DIRECTORY 
 cd /app
-echo -e "\e[36m>>>>>> EXTRACTING APPLICATION CONTENT <<<<<<\e[0m"
+ EXTRACTING APPLICATION CONTENT 
 unzip /tmp/${component}.zip
 cd /app
-echo -e "\e[36m>>>>>> DOWNLOADING NODEJS DEPENDENCIES <<<<<<\e[0m"
+ DOWNLOADING NODEJS DEPENDENCIES 
 npm install 
-echo -e "\e[36m>>>>>> copying cart service file <<<<<<\e[0m"
+ copying cart service file 
 cp ${script_path}/cart.service /etc/systemd/system/cart.service
-echo -e "\e[36m>>>>>> daemon-reload <<<<<<\e[0m"
+ daemon-reload 
 systemctl daemon-reload
-echo -e "\e[36m>>>>>> enabling the cart <<<<<<\e[0m"
+ enabling the cart 
 systemctl enable ${component}
-echo -e "\e[36m>>>>>> restart the cart <<<<<<\e[0m"
+ restart the cart 
 systemctl restart ${component}
 }
