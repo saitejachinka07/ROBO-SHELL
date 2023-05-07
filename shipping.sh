@@ -22,7 +22,7 @@ mv target/shipping-1.0.jar shipping.jar
 echo -e "\e[36m>>>>>> INSTALL MYSQL <<<<<<\e[0m"
 yum install mysql -y 
 echo -e "\e[36m>>>>>> LOAD SCHEMA <<<<<<\e[0m"
-mysql -h mysql.tej07.online -uroot -p${mysql_password} < /app/schema/shipping.sql 
+mysql -h mysql.tej07.online -uroot -pRoboshop@1 < /app/schema/shipping.sql 
 echo -e "\e[36m>>>>>> DOWNLOADING MAVEN DEPENDENCIES <<<<<<\e[0m"
 cp ${script_path}/shipping.service /etc/systemd/system/shipping.service
 echo -e "\e[36m>>>>>> RELOAD DAEMON <<<<<<\e[0m"
