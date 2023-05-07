@@ -11,28 +11,28 @@ print_head() {
 
 
 func_nodejs() {
-     Installing nodejs 
+   print_head Installing nodejs 
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 yum install nodejs -y
- ADDING APPLICATION USER 
+print_head ADDING APPLICATION USER 
 useradd ${app_user}
- CREATING APPLICATION DIRECTORY 
+print_head CREATING APPLICATION DIRECTORY 
 mkdir /app
- DOWNLOADING APPLICATION CONTENT 
+ print_head DOWNLOADING APPLICATION CONTENT 
 curl -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip 
- REDIRECTING TO /APP DIRECTORY 
+print_head REDIRECTING TO /APP DIRECTORY 
 cd /app
- EXTRACTING APPLICATION CONTENT 
+print_head EXTRACTING APPLICATION CONTENT 
 unzip /tmp/${component}.zip
 cd /app
- DOWNLOADING NODEJS DEPENDENCIES 
+ print_head DOWNLOADING NODEJS DEPENDENCIES 
 npm install 
- copying cart service file 
+print_head copying cart service file 
 cp ${script_path}/cart.service /etc/systemd/system/cart.service
- daemon-reload 
+print_head daemon-reload 
 systemctl daemon-reload
- enabling the cart 
+print_head enabling the cart 
 systemctl enable ${component}
- restart the cart 
+print_head restart the cart 
 systemctl restart ${component}
 }
