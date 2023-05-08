@@ -37,13 +37,13 @@ unzip /tmp/${component}.zip
 cd /app
  print_head DOWNLOADING NODEJS DEPENDENCIES 
 npm install 
-print_head copying cart service file 
-cp ${script_path}/cart.service /etc/systemd/system/cart.service
+print_head copying ${component} service file 
+cp ${script_path}/${component}.service /etc/systemd/system/${component}.service
 print_head daemon-reload 
 systemctl daemon-reload
-print_head enabling the cart 
+print_head enabling the ${component} 
 systemctl enable ${component}
-print_head restart the cart 
+print_head restart the ${component} 
 systemctl restart ${component}
 
 schema_setup
