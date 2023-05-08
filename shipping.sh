@@ -4,7 +4,7 @@ source ${script_path}/common.sh
 mysql_root_password=$1
 
 if [ -z "mysql_root_password" ]; then
-echo "Input of mysql_root_password is missing "
+echo "Input of mysql_root_password is missing"
 exit
 fi
 component="shipping"
