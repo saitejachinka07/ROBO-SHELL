@@ -6,6 +6,7 @@ if [ -z "mysql_root_password" ]; then
 echo Input of mysql_root_password is missing
 exit
 fi
+
 component="shipping"
 
 schema_setup=mysql
