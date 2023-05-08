@@ -14,7 +14,7 @@ cp ${script_path}/mongo.repo /etc/yum.repos.d/mongo.repo
 echo -e "\e[36m>>>>>> INSTALLING MANGODB <<<<<<\e[0m"
 yum install mongodb-org-shell -y
 echo -e "\e[36m>>>>>> LOADING SCHEMA <<<<<<\e[0m"
-mongo --host mongodb.tej07.online/app/schema/${component}.js
+mongo --host mongodb.tej07.online </app/schema/${component}.js
 
 }
 
