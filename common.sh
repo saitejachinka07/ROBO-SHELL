@@ -48,14 +48,19 @@ fi
 func_app_prereq() {
 func_print_head ADDING APPLICATION USER 
 useradd ${app_user}
+func_stat_check $?
 func_print_head CREATING APPLICATION DIRECTORY 
 mkdir /app
+func_stat_check $?
 func_print_head DOWNLOADING APPLICATION CONTENT 
 curl -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip 
+func_stat_check $?
 func_print_head REDIRECTING TO /APP DIRECTORY 
 cd /app
+
 func_print_head EXTRACTING APPLICATION CONTENT 
 unzip /tmp/${component}.zip
+func_stat_check $?
 
 }
 
@@ -63,12 +68,16 @@ unzip /tmp/${component}.zip
 func_systemd_setup() {
 func_print_head copying ${component}.service to system        
 cp ${script_path}/${component}.service /etc/systemd/system/${component}.service
+func_stat_check $?
 func_print_head RELOAD DAEMON 
 systemctl daemon-reload
+func_stat_check $?
 func_print_head ENABLE ${component} 
 systemctl enable ${component}
+func_stat_check $?
 func_print_head RESTART MYSQL 
 systemctl restart ${component}
+func_stat_check $?
 
 }
 
