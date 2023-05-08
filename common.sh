@@ -51,5 +51,5 @@ systemctl enable ${component}
 func_print_head restart the ${component} 
 systemctl restart ${component}
 
-schema_setup
+func_schema_setup
 }
