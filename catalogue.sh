@@ -6,4 +6,4 @@ component=catalogue
 func_nodejs
 
 echo -e "\e[36m>>>>>> Restart catalogue <<<<<<\e[0m"
-systemctl restart catalogue
+systemctl restart ${component}
