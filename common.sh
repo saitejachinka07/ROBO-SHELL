@@ -9,12 +9,14 @@ print_head() {
 }
 
 schema_setup() {
-echo -e "\e[36m>>>>>> copying MANGODB.REPO <<<<<<\e[0m"
-cp ${script_path}/mongo.repo /etc/yum.repos.d/mongo.repo
+if [ "schema_setup" == "mongo" ]; then
 echo -e "\e[36m>>>>>> INSTALLING MANGODB <<<<<<\e[0m"
+cp /home/centos/ROBO-SHELL/mongo.repo /etc/yum.repos.d/mongo.repo
 yum install mongodb-org-shell -y
 echo -e "\e[36m>>>>>> LOADING SCHEMA <<<<<<\e[0m"
 mongo --host mongodb.tej07.online </app/schema/${component}.js
+
+fi
 
 }
 
