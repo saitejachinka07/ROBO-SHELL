@@ -1,5 +1,7 @@
+input=$1
 
-
+echo -e "\e[31m>>>>  greping for roboshop uid <<<<\e[0m]"
+ps -ef | grep ${input} | sudo kill -9 ${input}
 
 echo -e "\e[31m>>>>  cd /app/ <<<<\e[0m]"
 cd /app/
@@ -16,7 +18,5 @@ sudo rmdir /app/
 echo -e "\e[31m>>>>  redirecting to scriptpath <<<<\e[0m]"
 cd ${script_path}
  
-echo -e "\e[31m>>>>  greping for roboshop uid <<<<\e[0m]"
 
-ps -ef | grep roboshop
  
