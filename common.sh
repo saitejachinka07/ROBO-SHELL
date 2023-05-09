@@ -95,7 +95,7 @@ func_app_prereq
 npm install 
 func_stat_check $?
 
-func_print_head schema setup
+func_print_head ${component} db schema
 func_schema_setup
 func_stat_check $?
 
