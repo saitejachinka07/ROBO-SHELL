@@ -1,10 +1,10 @@
 input=$1
-if [ -z "${input}"]; then
-ps -ef | grep roboshop
-else 
-echo need to exit
-exit
-fi
+#if [ -z "${input}"]; then
+#ps -ef | grep roboshop rerun.sh
+#else 
+#echo need to exit
+#exit
+#fi
 
 echo -e "\e[31m>>>>  greping for roboshop uid <<<<\e[0m]"
 ps -ef | grep ${input} | sudo kill -9 ${input}
