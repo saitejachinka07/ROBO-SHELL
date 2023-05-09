@@ -32,7 +32,7 @@ func_print_head LOADING SCHEMA
 mongo --host mongodb.tej07.online </app/schema/${component}.js
 func_stat_check $?
 fi
-if [ "schema_setup" == "mysql" ]; then
+if [ "$schema_setup" == "mysql" ]; then
 func_print_head INSTALL MYSQL 
 yum install mysql -y 
 func_stat_check $?
