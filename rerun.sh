@@ -1,6 +1,6 @@
 cd /app/
 sudo rm -rf *
-cd.. 
+cd .. 
 sudo rmdir /app/
 
 cd ${script_path} 
