@@ -20,15 +20,15 @@ func_stat_check() {
 
 func_schema_setup() {
 if [ "schema_setup" == "mongo" ]; then
-print_head COPYING MANGODB REPO FILE
+func_print_head COPYING MANGODB REPO FILE
 cp /home/centos/ROBO-SHELL/mongo.repo /etc/yum.repos.d/mongo.repo
 func_stat_check $?
 
-print_head INSTALLING MANGODB
+func_print_head INSTALLING MANGODB
 yum install mongodb-org-shell -y
 func_stat_check $?
 
-print_head LOADING SCHEMA 
+func_print_head LOADING SCHEMA 
 mongo --host mongodb.tej07.online </app/schema/${component}.js
 func_stat_check $?
 fi
