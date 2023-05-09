@@ -8,5 +8,4 @@ schema_setup=mongo
 
 func_nodejs
 
-echo -e "\e[36m>>>>>> Restart catalogue <<<<<<\e[0m"
-systemctl restart ${component}
+
