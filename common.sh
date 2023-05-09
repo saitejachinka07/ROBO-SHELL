@@ -75,7 +75,7 @@ func_stat_check $?
 func_print_head ENABLE ${component} 
 systemctl enable ${component}
 func_stat_check $?
-func_print_head RESTART MYSQL 
+func_print_head RESTART ${component} 
 systemctl restart ${component}
 func_stat_check $?
 
@@ -96,6 +96,7 @@ npm install
 func_stat_check $?
 
 func_schema_setup
+func_stat_check $?
 
 func_systemd_setup
 
