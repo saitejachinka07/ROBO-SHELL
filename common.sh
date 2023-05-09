@@ -19,7 +19,7 @@ func_stat_check() {
 }
 
 func_schema_setup() {
-if [ "schema_setup" == "mongo" ]; then
+if [ "$schema_setup" == "mongo" ]; then
 func_print_head COPYING MANGODB REPO FILE
 cp /home/centos/ROBO-SHELL/mongo.repo /etc/yum.repos.d/mongo.repo
 func_stat_check $?
